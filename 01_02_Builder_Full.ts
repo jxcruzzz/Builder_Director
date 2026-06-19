@@ -269,7 +269,7 @@ namespace BuilderFull {
         const gamingBuilder = new GamingComputerBuilder();
         const officeBuilder = new OfficeComputerBuilder();
         const store = new ComputerStore(gamingBuilder);
-        const streamingBuilder = new StreamingComputerBuilder();
+        const streamingBuilder = new StreamingComputerBuilder(); // Implementamos la nueva clase
 
         console.log("=== Full Setup con Gaming Builder ===");
         const fullGamer = store.buildFullSetup();
@@ -292,8 +292,16 @@ namespace BuilderFull {
         const basicOffice = store.buildBasicSetup();
         basicOffice.displayinfo();
 
-        
+        store.changeBuilder(streamingBuilder); // Cambiamos al builder de Streaming
 
+        // Imprimimos en consola ambas configuraciones
+        console.log("=== Full Setup con Streaming Builder ===");
+        const fullStreaming = store.buildFullSetup();
+        fullStreaming.displayinfo();
+
+        console.log("=== Basic Setup con Streaming Builder ===");
+        const basicStreaming = store.buildBasicSetup();
+        basicStreaming.displayinfo();
     }
 
     main();
